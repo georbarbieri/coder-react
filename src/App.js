@@ -1,22 +1,24 @@
 
 
+import Header from "./Components/Header/Header"
+import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
+import Layout from "./Components/Layout/Layout";
+import LoginContainer from "./Components/LoginContainer/LoginContainer";
+
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-    
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Layout>
+        <Header/>
+        <LoginContainer />
+        <ItemListContainer usuario ="Maria" apellido="Lopez"/>
+        <ItemListContainer usuario="Georgina" apellido="Barbieri"/>
+        <ItemListContainer  usuario="Valeria" apellido="Aguirre"/>
+      </Layout>
+      
+
+
     </div>
   );
 }
