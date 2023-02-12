@@ -1,12 +1,14 @@
 
-import {BsCart} from 'react-icons/bs';
+import {BsFillCartCheckFill} from 'react-icons/bs';
 
 const CartWidget = () => {
   return (
-    <div>
-        <BsCart/>
-        <p><span>5</span></p>
-    </div>
+    <div className="container-cart" style={{width: "150px", display: "flex", justifyContent: "center", alignItems: "center", position: "relative", color: "#ff8e9a",}}>
+        <BsFillCartCheckFill style={{fontSize: "2rem", color: "#cd0c36",}} />
+        <div className="bubble-counter" style={{width: "25px", height: "25px", border: "2px solid #cd0c36", borderRadius: "50%", position: "absolute", top: "-25px",display: "flex", color:"#cd0c36", justifyContent: "center", alignItems: "center",}}>
+          <span>12</span>
+        </div>
+      </div>
   )
 }
 
