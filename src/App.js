@@ -3,6 +3,7 @@
 import FetchingData from "./Components/FetchingData/FetchingData";
 import Header from "./Components/Header/Header"
 import ItemCount from "./Components/ItemCount/ItemCount";
+import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailContainer";
 import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
 import Layout from "./Components/Layout/Layout";
 //import LoginContainer from "./Components/LoginContainer/LoginContainer";
@@ -19,9 +20,9 @@ function App() {
       <Layout>
        <Header/>
         <ItemListContainer />
-        <FetchingData />
+        <ItemDetailContainer/>
         <ItemCount  stock={10} initial={0} onAdd={ onAdd} />
-
+        <FetchingData />
 
 
         
