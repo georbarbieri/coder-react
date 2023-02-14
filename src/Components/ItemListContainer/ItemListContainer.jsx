@@ -1,12 +1,40 @@
+import { useEffect, useState } from "react";
+import {products} from "../../productsMock";
+import ItemList from "../ItemList/ItemList";
+import "./ItemListContainer.css"
 
-const ItemListContainer = ( { usuario, apellido} ) => {
+const ItemListContainer = ( ) => {
 
-  return (
-    <div>
-      <h2>Hola {usuario} {apellido}</h2>
-      <img src="https://res.cloudinary.com/dngvikhuw/image/upload/v1676039409/images%20fandom/Taylor-Swift-in-the-trailer-for-the-Midnights-music-video-series_lwpmti.jpg" alt="" />
-    </div>
-  )
+  const [ items, setItems]= useState ( [ ] )
+
+  useEffect( ()=>{   
+  
+
+    const task = new Promise ( ( resolve, reject) => { 
+    
+      setTimeout(( )=> {
+        resolve(products)
+      }, 500);
+      //reject ("Error que diga algo")
+  } )
+
+  task
+  .then( ( res ) =>{
+    setItems(res);
+  })
+  .catch( ( error ) => {
+    console.log("Aca se rechazó ", error)
+  });
+}, [ ] )
+
+console.log("Mis items son: ", items)
+
+    return (
+      <>
+        <ItemList items={items}/>
+
+      </>
+    )
 }
 
 export default ItemListContainer

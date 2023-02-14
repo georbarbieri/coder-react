@@ -9,6 +9,9 @@ const Navbar = ()=>{
         gap: "80px", fontSize:"20px", color:"#cd0c36"}}>
             <ListNavbar title="Remeras"/>
             <ListNavbar title="Buzos"/>
+            <ListNavbar title="Tazas"/>
+            <ListNavbar title="Pilusos"/>
+            <ListNavbar title="Stickers"/>
             <ListNavbar title="Nosotrxs"/>
         </ul>
 
