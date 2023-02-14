@@ -9,7 +9,7 @@ const ItemList = ({items}) => {
   <div style={{width:"100%", backgroundColor:"#FFF4F8", display:"flex", justifyContent:"center", alignItems:"center", height:"60vh", flexWrap:"wrap", margin:"20px", padding:"10px", position:"relative"}}>
     {
         items.map((element)=>{
-            return <ProductCard element={element}/>
+            return <ProductCard element={element} key={element.id}/>
         })
     }
   </div>)

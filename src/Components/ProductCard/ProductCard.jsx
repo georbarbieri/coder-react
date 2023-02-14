@@ -6,7 +6,7 @@ import "./ProductCard.css"
 const ProductCard = ({element}) => {
   return (
     
-    <div className="containerCard">
+    <div className="containerCard" >
 
                             <h2>{element.title}</h2>
                             <h2>{element.price}</h2>
