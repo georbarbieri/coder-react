@@ -25,9 +25,11 @@ const ItemDetailContainer = () => {
 
     return (
         
-        <div style={{paddingBottom: "100px"}}>
+        <div style={{paddingBottom: "100px", justifyContent:"flex.end", gap:"20px", margin:"100px", }}>
         <h1>{product.title}</h1>
         <h2>{product.price}</h2>
+        <h3>{product.description}</h3>
+        <img src={product.img} alt="" />
         
       </div>
 

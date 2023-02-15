@@ -6,19 +6,18 @@ import "./ItemListContainer.css"
 
 const ItemListContainer = ( ) => {
 
-  const { categoryName} =useParams()
-  console.log("Así llega categoryName", categoryName)
+  const { categoryId} =useParams()
 
   const [ items, setItems]= useState ( [ ] )
 
   useEffect( ()=>{   
   
-    const productsFiltred = products.filter((product)=> product.category === categoryName)
+    const productsFiltred = products.filter((product)=> product.category === categoryId)
 
     const task = new Promise ( ( resolve, reject) => { 
     
       setTimeout(( )=> {
-        resolve(categoryName ? productsFiltred : products)
+        resolve(categoryId ? productsFiltred : products)
       }, 500);
       //reject ("Error que diga algo")
   } )
@@ -31,7 +30,7 @@ const ItemListContainer = ( ) => {
     console.log("Aca se rechazó ", error)
   });
 // eslint-disable-next-line react-hooks/exhaustive-deps
-}, [ categoryName] )
+}, [ categoryId] )
 
 
     return (

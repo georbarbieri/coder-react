@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom"
 import React from 'react'
 
-import "./ProductCard.css"
 
 const ProductCard = ({element}) => {
   return (
@@ -13,7 +12,7 @@ const ProductCard = ({element}) => {
                             <h3>{element.description}</h3>
                             <img src={element.img} alt="" style={{width: "100%", height:"200px"}} />
                             <Link to={`/itemDetail/${element.id}`}>
-                            <button >Ver más</button>
+                            <button style={{width:"100%", height:"50px", backgroundColor:" #7F669D", alignItems:"center",  }}>Ver más</button>
                             </Link>
                         </div>
   )

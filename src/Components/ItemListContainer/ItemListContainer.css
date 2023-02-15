@@ -1,7 +1,12 @@
 .containerCard{
     border:2px solid black; 
-    width: 300px;
-    height: 400px;
-    margin-bottom: 30px;
+    width: 250px;
+    height: 450px;
+    margin-bottom: 15px;
+    margin: 15px
 
+}
+.containerCard button{
+    display: flex;
+    justify-content: center;
 }

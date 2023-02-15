@@ -8,6 +8,7 @@ import Cart from "./Components/Cart/Cart";
 
 
 
+
 function App() {
 
   return (
@@ -27,15 +28,17 @@ function App() {
 
               <Route path="/"  element={<ItemListContainer/>}/>
 
-              <Route path="/category/:categoryName" element={ <ItemListContainer  /> } />
-              
+              <Route path="/category/:categoryId" element={ <ItemListContainer  /> } />
+
               <Route path="/itemDetail/:id" element={<ItemDetailContainer/>}/>
 
               <Route path="/cart"  element={<Cart/>}/>
 
-              <Route path="*"  element={<h1>Error 404 not found</h1>}/>
+              <Route path="*"  element={<h1>No se encontró lo que se buscaba, por favor intente nuevamente</h1>}/>
 
           </Routes>
+
+          
     </BrowserRouter>
 
   );
