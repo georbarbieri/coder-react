@@ -28,7 +28,7 @@ const [ mostrar, setMostrar]= useState(false)
         setMostrar(!mostrar)
     }
 
-    console.log(mostrar)
+    
 
   return (
     <div>

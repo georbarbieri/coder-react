@@ -1,6 +1,7 @@
 
 import Navbar from "../Navbar/Navbar"
 import CartWidget from "../CartWidget/CartWidget"
+import { Link } from "react-router-dom"
 
 
 const Header =()=>{
@@ -17,8 +18,12 @@ const Header =()=>{
             boxShadow: "0px 0px 10px 2px #ff8e9a",
             padding: "0 10px",
           }}>
-            <h2 className="logo-navbar" ><img src="https://res.cloudinary.com/dngvikhuw/image/upload/v1676162767/images%20fandom/iconoFanShop_pycu9h.png" alt="" style={{width:"200px", marginLeft:"50px"}}/></h2>
-
+            <Link to="/">
+                        <h2 className="logo-navbar" >
+                                    <img src="https://res.cloudinary.com/dngvikhuw/image/upload/v1676162767/images%20fandom/iconoFanShop_pycu9h.png" alt="" style={{width:"200px", marginLeft:"50px"}}/>
+                        </h2>
+            
+            </Link>
             <Navbar/>
             <CartWidget/>
         </div>
