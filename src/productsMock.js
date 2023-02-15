@@ -11,12 +11,12 @@ export const products = [
     },
     {
         id: 2,
-        title: "Remeras Bad Bunny",
-        price: 1700,
+        title: "Buzo Miley Cyrus",
+        price: 3400,
         stock: 10,
-        description: "Remera de 100% algodón sublimada",
-        category:"remeras",
-        img:"https://res.cloudinary.com/dngvikhuw/image/upload/v1676233184/images%20fandom/bf1a7bbf15ceb7b42909986f37de788784568d6cf9a6e523e72bd0ea7c0ef11a38543_w2usyg.jpg"
+        description: "Buzo de 100% algodón sublimada",
+        category:"buzos",
+        img:"https://res.cloudinary.com/dngvikhuw/image/upload/v1676233346/images%20fandom/de310570a90a4cc54e61e0bcdb58138cd12ed4ace8156591ac6acbfb131cb17438543_dzmbmn.jpg"
     },
     {
         id: 3,
@@ -29,12 +29,12 @@ export const products = [
     },
     {
         id: 4,
-        title: "Remeras Taylor Swift",
-        price: 1800,
+        title: "Buzo Taylor Swift",
+        price: 3500,
         stock: 10,
-        description: "Remera de 100% algodón sublimada",
-        category:"remeras",
-        img:"https://res.cloudinary.com/dngvikhuw/image/upload/v1676233210/images%20fandom/ea20d9ac4f656771567d136644ade0c32f850e0e70ccb6ae8c7066fcc19bda8d38543_ve4ivw.jpg"
+        description: "Buzo de 100% algodón sublimada",
+        category:"buzos",
+        img:"https://res.cloudinary.com/dngvikhuw/image/upload/v1676233185/images%20fandom/c11611bef523f89c465a9cf6abbaae560174b6b78491017237db3f35480d1f8c38543_r69j9p.jpg"
     },
     {
         id: 5,
@@ -65,6 +65,15 @@ export const products = [
     },
     {
         id: 8,
+        title: "Remeras Taylor Swift",
+        price: 1800,
+        stock: 10,
+        description: "Remera de 100% algodón sublimada",
+        category:"remeras",
+        img:"https://res.cloudinary.com/dngvikhuw/image/upload/v1676233210/images%20fandom/ea20d9ac4f656771567d136644ade0c32f850e0e70ccb6ae8c7066fcc19bda8d38543_ve4ivw.jpg"
+    },
+    {
+        id: 9,
         title: "Buzo Harry Styles",
         price: 3500,
         stock: 10,
@@ -73,21 +82,13 @@ export const products = [
         img:"https://res.cloudinary.com/dngvikhuw/image/upload/v1676233345/images%20fandom/d4b707505120b56a2ba87193840ed63f3de56f97a65676022a54423f9deab0ae38543_duiio6.jpg"
     },
     {
-        id: 9,
-        title: "Buzo Taylor Swift",
-        price: 3500,
-        stock: 10,
-        description: "Buzo de 100% algodón sublimada",
-        category:"buzos",
-        img:"https://res.cloudinary.com/dngvikhuw/image/upload/v1676233185/images%20fandom/c11611bef523f89c465a9cf6abbaae560174b6b78491017237db3f35480d1f8c38543_r69j9p.jpg"
-    },
-    {
         id: 10,
-        title: "Buzo Miley Cyrus",
-        price: 3400,
+        title: "Remeras Bad Bunny",
+        price: 1700,
         stock: 10,
-        description: "Buzo de 100% algodón sublimada",
-        category:"buzos",
-        img:"https://res.cloudinary.com/dngvikhuw/image/upload/v1676233346/images%20fandom/de310570a90a4cc54e61e0bcdb58138cd12ed4ace8156591ac6acbfb131cb17438543_dzmbmn.jpg"
+        description: "Remera de 100% algodón sublimada",
+        category:"remeras",
+        img:"https://res.cloudinary.com/dngvikhuw/image/upload/v1676233184/images%20fandom/bf1a7bbf15ceb7b42909986f37de788784568d6cf9a6e523e72bd0ea7c0ef11a38543_w2usyg.jpg"
     }
+    
 ]
