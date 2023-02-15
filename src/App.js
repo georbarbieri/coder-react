@@ -1,6 +1,6 @@
 
 
-import FetchingData from "./Components/FetchingData/FetchingData";
+
 import Header from "./Components/Header/Header"
 import ItemCount from "./Components/ItemCount/ItemCount";
 import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailContainer";
@@ -22,7 +22,7 @@ function App() {
         <ItemListContainer />
         <ItemDetailContainer/>
         <ItemCount  stock={10} initial={0} onAdd={ onAdd} />
-        <FetchingData />
+       
 
 
         

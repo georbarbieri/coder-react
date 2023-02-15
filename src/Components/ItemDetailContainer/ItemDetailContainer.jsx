@@ -1,25 +1,32 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { products } from '../../productsMock'
 
 
 
 const ItemDetailContainer = () => {
 
+
+    
     const [product, setProduct] = useState({ })
 
 let id = 2
 
-    useEffect ( ()=>{
+        useEffect ( ()=>{
 
-        let productSelected= products.find (prod => prod.id === id)
+            let productSelected= products.find (prod => prod.id === id)
 
-        setProduct(productSelected)
+            setProduct(productSelected);
+            
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        }, [ ]);
+
+            console.log(product)
+
+    return (
         
-    }, [ ])
+        <div>ItemDetailContainer</div>
 
-    console.log(product)
-  return (
-    <div>ItemDetailContainer</div>
+        
   )
 }
 
