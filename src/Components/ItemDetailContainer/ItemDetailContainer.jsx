@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { products } from '../../productsMock'
 import { useParams } from 'react-router-dom'
-
+import ItemDetail from '../ItemDetail/ItemDetail'
 
 
 
@@ -11,7 +11,7 @@ const ItemDetailContainer = () => {
     const {id} = useParams()
     const [product, setProduct] = useState({ })
 
-//let id = 2
+
 
         useEffect ( ()=>{
 
@@ -25,14 +25,7 @@ const ItemDetailContainer = () => {
 
     return (
         
-        <div style={{paddingBottom: "100px", justifyContent:"flex.end", gap:"20px", margin:"100px", }}>
-        <h1>{product.title}</h1>
-        <h2>{product.price}</h2>
-        <h3>{product.description}</h3>
-        <img src={product.img} alt="" />
-        
-      </div>
-
+        <ItemDetail product={product}/>
         
   )
 }

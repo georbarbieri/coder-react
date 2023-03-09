@@ -1,3 +1,19 @@
-.container-navbar{
-    background-color: aquamarine;
+
+.categories{
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+}
+.navbar-item{
+    display: flex;
+    list-style: none;
+    color:#cd0c36;
+    font-weight: bold;
+}
+
+.active-navbar{
+    display: flex;
+    list-style: none;
+    font-size :18px;
+    font-weight: bold;
 }

@@ -1,26 +1,25 @@
-import{Link} from "react-router-dom"
+
 import ListNavbar from "../ListNavbar/ListNavbar"
 import "./Navbar.css"
+import{Link, NavLink} from "react-router-dom"
 
 const Navbar = ()=>{
 
     return (
-        <ul className="categories" style={{ display: "flex",
-        justifyContent: "space-around",
-        gap: "80px", fontSize:"20px", color:"#cd0c36"}}>
+        <ul className="categories" >
             
             
-            <Link to="/">
+            <NavLink to="/" className={({isActive})=> isActive ? "active-navbar" : "navbar-item"}>
                 <ListNavbar title="Todo"/>
-            </Link>
+            </NavLink>
 
-            <Link to="/category/remeras">
+            <NavLink to="/category/remeras" className={({isActive})=> isActive ? "active-navbar" : "navbar-item"}>
                 <ListNavbar title="Remeras"/>
-            </Link>
+            </NavLink>
 
-            <Link to="/category/buzos">
+            <NavLink to="/category/buzos" className={({isActive})=> isActive ? "active-navbar" : "navbar-item"}>
                 <ListNavbar title="Buzos"/>
-            </Link>
+            </NavLink>
             
             
             {/*<ListNavbar title="Tazas"/>

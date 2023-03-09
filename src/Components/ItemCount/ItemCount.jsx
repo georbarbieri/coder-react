@@ -1,18 +1,13 @@
 
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 
-const ItemCount = ({stock, initial, onAdd}) => {
+const ItemCount = ({stock, initial=1, agregarAlCarrito}) => {
 
+    const [contador, setContador] = useState(initial)
 
-
-
-const [contador, setContador] = useState(initial)
-
-const [ mostrar, setMostrar]= useState(false)
-
-
-
-
+    useEffect(()=>{
+      setContador(initial)
+    },[initial])
 
     const sumar = () => {
         if(contador < stock ){
@@ -20,32 +15,19 @@ const [ mostrar, setMostrar]= useState(false)
     }
 
     const restar = () => {
-        if(contador > 0) {
+        if(contador > 1) {
         setContador(contador -1)}
     }
 
-    const cambiarEstado = ()=> {
-        setMostrar(!mostrar)
-    }
-
     
-
+ 
   return (
     <div>
         
-       <h1 style={{
-        color: `${mostrar ? "red" :  "blue" }`
-       }}>El contador está en {contador}</h1>
+       <h1 >{contador}</h1>
        <button onClick={sumar}>Sumar</button> 
        <button onClick={restar}>Restar</button>
-       <button onClick={cambiarEstado} disabled={ stock  ===  0  ? true : false}>
-            {mostrar ? "Ocultar" : "Mostrar" }
-        </button>
-        
-        {
-            mostrar === true? <h2>Aca se muestra este texto </h2> : null
-        }
-        <button onClick={()=>onAdd(contador)}>Agregar al carrito</button>
+        <button onClick={()=>agregarAlCarrito(contador)}>Agregar al carrito</button>
     </div>
   )
 }
