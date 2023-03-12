@@ -1,33 +1,29 @@
-import React, { useEffect, useState } from 'react'
-import { products } from '../../productsMock'
-import { useParams } from 'react-router-dom'
-import ItemDetail from '../ItemDetail/ItemDetail'
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { db } from "../../firebaseConfig";
+import ItemDetail from "../ItemDetail/ItemDetail";
 
-
+import { getDoc, collection, doc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
+  const { id } = useParams();
+  const [product, setProduct] = useState({});
 
+  useEffect(() => {
+    const itemCollection = collection(db, "products");
+    const ref = doc(itemCollection, id);
 
-    const {id} = useParams()
-    const [product, setProduct] = useState({ })
+    getDoc(ref)
+      .then((res) => {
+        setProduct({
+          ...res.data(),
+          id: res.id,
+        });
+      })
+      .catch((err) => console.log(err));
+  }, [id]);
 
+  return <ItemDetail product={product} />;
+};
 
-
-        useEffect ( ()=>{
-
-            let productSelected= products.find (prod => prod.id === +id)
-
-            setProduct(productSelected);
-            
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        }, [ ]);
-
-
-    return (
-        
-        <ItemDetail product={product}/>
-        
-  )
-}
-
-export default ItemDetailContainer
+export default ItemDetailContainer;

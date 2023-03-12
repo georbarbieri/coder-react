@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { products } from "../../productsMock";
 import ItemList from "../ItemList/ItemList";
 import "./ItemListContainer.css";
-
 import { CircleLoader } from "react-spinners";
+
+import { db } from "../../firebaseConfig";
+import { getDocs, collection, query, where } from "firebase/firestore";
 
 const styles = {
   display: "block",
@@ -19,26 +20,61 @@ const ItemListContainer = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    const productsFiltred = products.filter(
-      (product) => product.category === categoryId
-    );
+    const itemCollection = collection(db, "products");
 
-    const task = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(categoryId ? productsFiltred : products);
-      }, 2000);
-      //reject ("Error que diga algo")
-    });
+    if (categoryId) {
+      const q = query(itemCollection, where("category", "==", categoryId));
 
-    task
-      .then((res) => {
-        setItems(res);
-      })
-      .catch((error) => {
-        console.log("Aca se rechazó ", error);
-      });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+      getDocs(q)
+        .then((res) => {
+          const products = res.docs.map((products) => {
+            return {
+              ...products.data(),
+              id: products.id,
+            };
+          });
+
+          setItems(products);
+        })
+        .catch((err) => console.log("error: " + err));
+    } else {
+      getDocs(itemCollection)
+        .then((res) => {
+          const products = res.docs.map((products) => {
+            return {
+              ...products.data(),
+              id: products.id,
+            };
+          });
+
+          setItems(products);
+        })
+        .catch((err) => console.log("error: " + err));
+    }
   }, [categoryId]);
+  console.log(items);
+
+  // useEffect(() => {
+  //   const productsFiltred = products.filter(
+  //     (product) => product.category === categoryId
+  //   );
+
+  //   const task = new Promise((resolve, reject) => {
+  //     setTimeout(() => {
+  //       resolve(categoryId ? productsFiltred : products);
+  //     }, 1500);
+  //     //reject ("Error que diga algo")
+  //   });
+
+  //   task
+  //     .then((res) => {
+  //       setItems(res);
+  //     })
+  //     .catch((error) => {
+  //       console.log("Aca se rechazó ", error);
+  //     });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [categoryId]);
 
   return (
     <div className="cargando-productos">
