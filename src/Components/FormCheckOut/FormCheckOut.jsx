@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import { useState } from "react";
 import {
   serverTimestamp,
@@ -8,7 +9,10 @@ import {
 } from "firebase/firestore";
 import { db } from "../../firebaseConfig";
 const FormCheckOut = ({ cart, total, clearCart, setOrderId }) => {
-  const [userInfo, setUserInfo] = useState({ email: "", phone: "" });
+  const [userInfo, setUserInfo] = useState({
+    email: "",
+    phone: "",
+  });
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -34,7 +38,10 @@ const FormCheckOut = ({ cart, total, clearCart, setOrderId }) => {
   return (
     <div className="user-buy">
       <h1>En caso de no tener cuenta</h1>
-      <h2>Ingrese su email y su numero de teléfono</h2>
+      <h2>
+        Ingrese sus datos que se le solicitarán a continuación para completar la
+        compra
+      </h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -44,7 +51,7 @@ const FormCheckOut = ({ cart, total, clearCart, setOrderId }) => {
         />
         <input
           type="text"
-          placeholder="Ingrese su teléfono"
+          placeholder="Ingrese su telefono"
           name="phone"
           onChange={(e) => setUserInfo({ ...userInfo, phone: e.target.value })}
         />

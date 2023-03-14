@@ -11,7 +11,6 @@ const Cart = () => {
 
   const [buy, setBuy] = useState(false);
   const [orderId, setOrderId] = useState(null);
-  console.log(orderId);
 
   const clearCartAlert = () => {
     Swal.fire({

@@ -6,7 +6,7 @@ const FinishBuy = ({ orderId }) => {
     <div>
       <h1>Felicidades haz podido realizar la compra!</h1>
       <h2>A continuación te dejaré los datos del pedido que haz realizado</h2>
-
+      <h2>Datos del pedido:</h2>
       <h2> El código de seguimiento de su compra es: </h2>
       <div>
         <h1>{orderId}</h1>
