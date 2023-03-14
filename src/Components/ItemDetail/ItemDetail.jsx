@@ -22,14 +22,16 @@ const ItemDetail = ({ product }) => {
   };
 
   const quantity = getQuantityById(product.id);
-  console.log(quantity);
 
   return (
-    <div>
-      <div style={{ paddingBottom: "100px" }}>
-        <h1>{product.title}</h1>
-        <h2>{product.price}</h2>
+    <div className="container-item-detail">
+      <div className="item-img">
         <img src={product.img} alt="" />
+      </div>
+      <div className="item-description" style={{ paddingBottom: "100px" }}>
+        <h1>Titulo: {product.title}</h1>
+        <h2>Precio: $ {product.price}</h2>
+        <h3>Descripción de producto: {product.description}</h3>
       </div>
       <ItemCount
         stock={product.stock}

@@ -27,10 +27,10 @@ const ItemListContainer = () => {
 
       getDocs(q)
         .then((res) => {
-          const products = res.docs.map((products) => {
+          const products = res.docs.map((product) => {
             return {
-              ...products.data(),
-              id: products.id,
+              ...product.data(),
+              id: product.id,
             };
           });
 
@@ -40,10 +40,10 @@ const ItemListContainer = () => {
     } else {
       getDocs(itemCollection)
         .then((res) => {
-          const products = res.docs.map((products) => {
+          const products = res.docs.map((product) => {
             return {
-              ...products.data(),
-              id: products.id,
+              ...product.data(),
+              id: product.id,
             };
           });
 
@@ -52,29 +52,6 @@ const ItemListContainer = () => {
         .catch((err) => console.log("error: " + err));
     }
   }, [categoryId]);
-  console.log(items);
-
-  // useEffect(() => {
-  //   const productsFiltred = products.filter(
-  //     (product) => product.category === categoryId
-  //   );
-
-  //   const task = new Promise((resolve, reject) => {
-  //     setTimeout(() => {
-  //       resolve(categoryId ? productsFiltred : products);
-  //     }, 1500);
-  //     //reject ("Error que diga algo")
-  //   });
-
-  //   task
-  //     .then((res) => {
-  //       setItems(res);
-  //     })
-  //     .catch((error) => {
-  //       console.log("Aca se rechazó ", error);
-  //     });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [categoryId]);
 
   return (
     <div className="cargando-productos">
