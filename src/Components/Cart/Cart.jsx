@@ -1,12 +1,12 @@
 import { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext";
 import Swal from "sweetalert2";
-
 import NoData from "../../assets/images/No-data.svg";
 import FormCheckOut from "../FormCheckOut/FormCheckOut";
 import FinishBuy from "../FinishBuy/FinishBuy";
+import "./cart.css";
 const Cart = () => {
-  const { cart, clearCart, deleteProductById, getTotalPrice } =
+  const { cart, clearCart, deleteProductById, getTotalPrice, getTotalItems } =
     useContext(CartContext);
 
   const [buy, setBuy] = useState(false);
@@ -38,15 +38,7 @@ const Cart = () => {
       {!buy ? (
         <div className="cart-container">
           {cart.length < 1 ? (
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                marginTop: "75px",
-              }}
-            >
+            <div className="cart-no-item">
               <h1>No hay elementos en el carrito</h1>
               <img src={NoData} alt="" style={{ height: "350px" }} />
             </div>
@@ -56,18 +48,18 @@ const Cart = () => {
 
               {cart.map((item) => {
                 return (
-                  <div
-                    key={item.id}
-                    className="cart-Item"
-                    style={{ border: "2px solid red" }}
-                  >
+                  <div key={item.id} className="cart-Item">
                     <img src={item.img} alt="imagen del producto" />
                     <div className="cart-item-info">
                       <h3>Nombre: {item.title}</h3>
                       <h3>Precio: {item.price}</h3>
                       <h3>Cantidad: {item.quantity}</h3>
                     </div>
-                    <button onClick={() => deleteProductById(item.id)}>
+                    <div className="contador"></div>
+                    <button
+                      onClick={() => deleteProductById(item.id)}
+                      className="btn-quitar"
+                    >
                       Quitar
                     </button>
                   </div>
@@ -78,9 +70,10 @@ const Cart = () => {
 
           <div className="cart-info">
             <h2>Descripcion del carrito:</h2>
-            <h3>Cantidad de productos: {}</h3>
+
+            <h3>Cantidad de productos: {getTotalItems()}</h3>
             <h3>Precio total: {total > 0 ? total : "No hay items"}</h3>
-            <h3>Descuento: </h3>
+            <h3>Descuentos: No hay descuentos aplicados</h3>
             <h3>Precio final: {"$" + total}</h3>
 
             {cart.length > 0 && (
