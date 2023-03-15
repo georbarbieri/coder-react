@@ -1,0 +1,14 @@
+.containerCard {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid palevioletred;
+    border-radius: 10px;
+    width: 250px;
+    height: 395px;
+    background-color: pink;
+}
+
+.containerCard h2 {
+    font-size: 20px;
+    margin-left: 25px;
+}

@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import "./FinishBuy.css";
 const FinishBuy = ({ orderId }) => {
   return (
-    <div>
+    <div className="felicidades">
       <h1>Felicidades haz podido realizar la compra!</h1>
-      <div className="postMessage">
+      <div className="container-orden">
         <h3>Su orden se generó correctamente</h3>
         <p>Número de orden: {orderId}</p>
         <p>
@@ -14,7 +14,9 @@ const FinishBuy = ({ orderId }) => {
         </p>
         <p>¡Muchas gracias por su compra!</p>
       </div>
-      <Link to="/">Volver a comprar</Link>
+      <Link to="/" className="btn">
+        Volver a comprar
+      </Link>
     </div>
   );
 };

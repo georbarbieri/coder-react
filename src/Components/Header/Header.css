@@ -1,15 +1,19 @@
-
-    
-
-.container-logo{
+.container-logo {
     display: flex;
     width: 100%;
-    height: 10vh;
+    height: 200px;
+    background-color: #FFE2EC;
     justify-content: space-between;
     align-items: center;
-    box-shadow: "10px 0px 10px 1px #7F669D";
-    padding: "0 10px";
+    box-shadow: 10px 0px 10px 1px #ff8e9a;
+    padding: 0 10px;
 }
-.logo-navbar{
+
+.logo-navbar {
     color: #7F669D;
+}
+
+.container-logo img {
+    width: 200px;
+    margin-left: 50px;
 }

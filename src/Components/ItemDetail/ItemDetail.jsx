@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import ItemCount from "../ItemCount/ItemCount";
 import Swal from "sweetalert2";
+import "./ItemDetail.css";
 
 const ItemDetail = ({ product }) => {
   const { addToCart, getQuantityById } = useContext(CartContext);
@@ -32,12 +33,13 @@ const ItemDetail = ({ product }) => {
         <h1>Titulo: {product.title}</h1>
         <h2>Precio: $ {product.price}</h2>
         <h3>Descripción de producto: {product.description}</h3>
+
+        <ItemCount
+          stock={product.stock}
+          initial={quantity}
+          agregarAlCarrito={agregarAlCarrito}
+        />
       </div>
-      <ItemCount
-        stock={product.stock}
-        initial={quantity}
-        agregarAlCarrito={agregarAlCarrito}
-      />
     </div>
   );
 };

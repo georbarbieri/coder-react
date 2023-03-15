@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
 import "./ItemListContainer.css";
 import { CircleLoader } from "react-spinners";
-
+import "./ItemListContainer.css";
 import { db } from "../../firebaseConfig";
 import { getDocs, collection, query, where } from "firebase/firestore";
 
@@ -56,14 +56,7 @@ const ItemListContainer = () => {
   return (
     <div className="cargando-productos">
       {items.length < 1 ? (
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
+        <div className="loanding">
           <CircleLoader
             color={"red"}
             cssOverride={styles}

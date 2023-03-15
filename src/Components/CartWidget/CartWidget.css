@@ -1,0 +1,26 @@
+.container-cart {
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: #ff8e9a;
+}
+
+.check-fill {
+    font-size: 2rem;
+    color: #cd0c36;
+}
+
+.bubble-counter {
+    width: 25px;
+    height: 25px;
+    border: 2px solid #cd0c36;
+    border-radius: 50%;
+    position: absolute;
+    top: -25px;
+    display: flex;
+    color: #cd0c36;
+    justify-content: center;
+    align-items: center;
+}

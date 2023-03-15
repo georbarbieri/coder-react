@@ -3,6 +3,7 @@ import { TextField, Button } from "@mui/material";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Link } from "react-router-dom";
+import "./Login.css";
 const Login = () => {
   const { handleSubmit, values, handleChange, errors } = useFormik({
     initialValues: {
@@ -29,6 +30,7 @@ const Login = () => {
   return (
     <div className="formulario-login" style={{ marginTop: "50px" }}>
       <form action="" onSubmit={handleSubmit}>
+        <h1>Ingresa a tu cuenta</h1>
         <TextField
           label="Ingresa tu email"
           variant="outlined"
@@ -52,8 +54,10 @@ const Login = () => {
           Ingresar
         </Button>
       </form>
-      <h1>No tienes cuenta?</h1>
-      <Link to="/sign-up">Registrate</Link>
+      <h1 className="no-cuenta">No tienes cuenta?</h1>
+      <Link className="link" to="/sign-up">
+        Registrate
+      </Link>
     </div>
   );
 };
