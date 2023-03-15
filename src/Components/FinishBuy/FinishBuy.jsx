@@ -5,13 +5,15 @@ const FinishBuy = ({ orderId }) => {
   return (
     <div>
       <h1>Felicidades haz podido realizar la compra!</h1>
-      <h2>A continuación te dejaré los datos del pedido que haz realizado</h2>
-      <h2>Datos del pedido:</h2>
-      <h2> El código de seguimiento de su compra es: </h2>
-      <div>
-        <h1>{orderId}</h1>
+      <div className="postMessage">
+        <h3>Su orden se generó correctamente</h3>
+        <p>Número de orden: {orderId}</p>
+        <p>
+          Recuerde revisar su correo para seguir las indicaciones y coordinar la
+          entrega.
+        </p>
+        <p>¡Muchas gracias por su compra!</p>
       </div>
-      <h3>Esperamos que los super disfrutes</h3>
       <Link to="/">Volver a comprar</Link>
     </div>
   );

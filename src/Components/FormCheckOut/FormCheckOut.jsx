@@ -1,4 +1,5 @@
 /* eslint-disable array-callback-return */
+import "./FormCheckOut.css";
 import { useState } from "react";
 import {
   serverTimestamp,
@@ -43,12 +44,14 @@ const FormCheckOut = ({ cart, total, clearCart, setOrderId }) => {
         compra
       </h2>
       <form onSubmit={handleSubmit}>
+        <label>Ingrese su email</label>
         <input
           type="text"
           placeholder="Ingrese su email"
           name="email"
           onChange={(e) => setUserInfo({ ...userInfo, email: e.target.value })}
         />
+        <label>Ingrese su número telefonico</label>
         <input
           type="text"
           placeholder="Ingrese su telefono"
@@ -56,11 +59,10 @@ const FormCheckOut = ({ cart, total, clearCart, setOrderId }) => {
           onChange={(e) => setUserInfo({ ...userInfo, phone: e.target.value })}
         />
         <button>Comprar</button>
+        <button>
+          <a href="/login">Ingresá a tu cuenta</a>
+        </button>
       </form>
-
-      <button>
-        <a href="/login">Ingresá a tu cuenta</a>
-      </button>
     </div>
   );
 };

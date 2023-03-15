@@ -1,0 +1,70 @@
+.user-buy {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 30px;
+}
+
+.user-buy h1 {
+    font-size: 40px;
+    font-style: italic;
+    font-weight: 500;
+    text-decoration: underline wavy palevioletred;
+}
+
+.user-buy h2 {
+    font-size: 30px;
+    font-weight: lighter;
+    border: 3px dashed deeppink;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.user-buy form {
+
+    border: 2px solid deeppink;
+    border-radius: 15px;
+    justify-content: space-between;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-weight: bolder;
+    width: 60%;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 5px 5px 0px #7F669D;
+
+}
+
+.user-buy form input {
+    width: 80%;
+    height: 50px;
+    border: 2px solid#7F669D;
+    margin-left: 80px;
+    text-align: center;
+    font-size: medium;
+    border-radius: 10px;
+}
+
+.user-buy button {
+    width: 150px;
+    height: 40px;
+    align-self: center;
+    margin-right: 50px;
+    margin-top: 10px;
+    background-color: palevioletred;
+    border-radius: 10px;
+
+    box-shadow: 0 0px 4px #777, 0 0 20px palevioletred inset;
+    font-size: 15px;
+    transition: background-color .5s;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.user-buy button:hover {
+    background-color: deeppink;
+}
