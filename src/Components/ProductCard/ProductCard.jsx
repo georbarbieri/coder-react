@@ -6,24 +6,9 @@ const ProductCard = ({ element }) => {
     <div className="containerCard">
       <h2>{element.title}</h2>
       <h2 className="price">$ {element.price}</h2>
-      <img
-        className="img"
-        src={element.img}
-        alt=""
-        style={{ width: "100%", height: "200px" }}
-      />
+      <img className="img" src={element.img} alt="" />
       <Link to={`/itemDetail/${element.id}`}>
-        <button
-          className="ver-mas"
-          style={{
-            width: "100%",
-            height: "50px",
-            backgroundColor: " deeppink",
-            alignItems: "center",
-          }}
-        >
-          Ver más
-        </button>
+        <button className="ver-mas">Ver más</button>
       </Link>
     </div>
   );
