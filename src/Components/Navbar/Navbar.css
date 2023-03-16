@@ -1,19 +1,19 @@
-
-.categories{
+.categories {
     display: flex;
     justify-content: space-around;
     gap: 40px;
 }
-.navbar-item{
+
+.navbar-item {
     display: flex;
     list-style: none;
-    color:#cd0c36;
+    color: #cd0c36;
     font-weight: bold;
 }
 
-.active-navbar{
+.active-navbar {
     display: flex;
     list-style: none;
-    font-size :18px;
+    font-size: 18px;
     font-weight: bold;
 }

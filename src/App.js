@@ -10,14 +10,6 @@ import Register from "./Components/Register/Register";
 
 function App() {
   return (
-    //<div className="App">
-
-    //
-    //<ItemListContainer />
-    //<ItemDetailContainer/>
-    //<ItemCount  stock={10} initial={0} onAdd={ onAdd} />
-    //</div>
-
     <BrowserRouter>
       <CartContextProvider>
         <Header />
