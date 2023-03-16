@@ -53,6 +53,7 @@ const Cart = () => {
                       <h3>Nombre: {item.title}</h3>
                       <h3>Precio: {item.price}</h3>
                       <h3>Cantidad: {item.quantity}</h3>
+                      <h3>Sub total: {item.quantity * item.price}</h3>
                     </div>
                     <div className="contador"></div>
                     <button
