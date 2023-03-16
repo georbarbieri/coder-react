@@ -10,6 +10,7 @@
 }
 
 .containerCard h2 {
+    margin-top: 25px;
     font-size: 18px;
     margin-left: 20px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
